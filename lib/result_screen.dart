@@ -12,10 +12,10 @@ class ResultScreen extends StatelessWidget {
   ResultScreen(this.selectedGender, this.height, this.weight);
   @override
   Widget build(BuildContext context) {
-    var result =
+    var calculator =
         Calculator(gender: selectedGender, height: height, weight: weight);
-    var bmiResult = result.calculateBMI.toStringAsFixed(2);
-    var bmiCategory = result.bmiCategory;
+    var bmiResult = calculator.calculateBMI.toStringAsFixed(2);
+    var bmiCategory = calculator.bmiCategory;
     return Column(
       children: [
         Container(
