@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:new_bmi_for_module/custom_button.dart';
 import 'package:new_bmi_for_module/custom_card.dart';
 import 'package:new_bmi_for_module/custom_slider.dart';
 import 'package:new_bmi_for_module/result_screen.dart';
@@ -142,19 +141,24 @@ class _InputScreenState extends State<InputScreen> {
               ),
             ),
           ),
-          CustomButton(
-            title: 'Calculate BMI',
-            onTap: () {
-              showModalBottomSheet(
-                context: context,
-                builder: (BuildContext context) => ResultScreen(
-                  selectedGender,
-                  height,
-                  weight,
-                ),
-              );
-            },
-          )
+          Container(
+            width: double.infinity,
+            height: 50,
+            child: FlatButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (BuildContext context) =>
+                      ResultScreen(selectedGender, height, weight),
+                );
+              },
+              color: Colors.yellow[900],
+              child: Text(
+                'Calculate BMI',
+                style: TextStyle(fontSize: 30),
+              ),
+            ),
+          ),
         ],
       ),
     );
