@@ -66,7 +66,7 @@ class ResultScreen extends StatelessWidget {
 class Calculator {
   final int height;
   final int weight;
-  Gender gender;
+  final Gender gender;
   double _result;
 
   Calculator({this.height, this.weight, this.gender});
